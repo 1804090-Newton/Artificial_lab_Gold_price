@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html >
+<!--From https://codepen.io/frytyler/pen/EGdtg-->
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+  <style>
+.light-blue_lighten-1 {
+  background-color: lightblue;
+  color: white;
+  
+  padding: 20px;
+}
+.container {
+  margin: 0 auto;
+  max-width: 500px;
+  width: 100%;
+}
+.Newton {
+  margin: 0 auto;
+  max-width: 200px;
+  width: 100%;
+}
+.orange {
+  background-color: #ff9800 !important;
+  font-size: 100px;
+}
+</style>
+</head>
+
+<body>
+ <nav class="light-blue_lighten-1" role="navigation">
+    <div class="nav-wrapper container"> <h1 style="color:orange;" class="Newton">WELLCOME</h1>
+      <ul class="right hide-on-med-and-down">
+       
+      </ul>
+
+      <ul id="nav-mobile" class="sidenav">
+       
+      </ul>
+      
+    </div>
+  </nav>
+ <div class="login">
+	
+    <div class="container">
+      <br><br>
+      <h1 style="color:orange;" class="header center orange-text">Gold price prediction</h1>
+      <div class="row center">
+        
+      </div>
+
+     <!-- Main Input For Receiving Query to our ML -->
+    <form action="{{ url_for('predict')}}"method="post">
+    	<input type="text" name="SPX" placeholder="SPX" required="required" /><br><br><br>
+        <input type="text" name="USO" placeholder="USO" required="required" /><br><br><br>
+		<input type="text" name="SLV" placeholder="SLV" required="required" /><br><br><br><br>
+		<input type="text" name="EUR/USD" placeholder="EUR/USD" required="required" /><br><br><br>
+
+        <button style="background-color:orange;" type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
