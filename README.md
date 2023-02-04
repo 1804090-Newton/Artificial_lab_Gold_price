@@ -1,1 +1,1 @@
-# Artificial_lab_Gold_price_prediction.
+# Artificial_intelligence_lab_Gold_price_prediction.
